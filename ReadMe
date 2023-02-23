@@ -1,0 +1,27 @@
+Axe App utilizes Vite + React, as well as Bootstrap for CSS.
+Axe app was created to keep track of players scores during an Axe tournament. 
+
+Within this app you can:
+    -From the Home Page
+        -You can start new by creating a list of New players
+        OR
+        -Continue by checking players in
+    
+    -From the Check In Page
+        -All players that are listed are automatically checked in unless you mark them as absent
+        -Once players are checked in you can click the button at the bottom and the application will create random match ups. Who faces off with who.
+        -These match us flow over to the Match Page
+
+    -From the Match Page
+        -The top of this page displays what week you are in
+        -There are 4 Tabs at the top corresponding to which round you are on as well as a tab that displays the final scores for the week.
+        -You will see 2 names matched: who faces off with who
+        -6 columns represents 6 throws in each round
+        -In each column you will choose what each person scored during that throw 
+            - check boxes makes scoring a throw easy
+        -The section at the end of each row will total up the score for that round
+
+        -The Final Score tab will take the top 2 scores for each player, add them together and display the final score per player.
+            -the button at the bottom outputs the final scores to an excel spreadsheet and clears all inputs. Resetting everything but the players so the app can be used again next week
+            
+            -the Clear All button at the bottom will reset the entire app as well as the players
