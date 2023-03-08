@@ -10,7 +10,7 @@ Within this app you can:
     -From the Check In Page
         -All players that are listed are automatically checked in unless you mark them as absent
         -Once players are checked in you can click the button at the bottom and the application will create random match ups. Who faces off with who.
-        -These match us flow over to the Match Page
+        -These match ups flow over to the Match Page
 
     -From the Match Page
         -The top of this page displays what week you are in
@@ -24,4 +24,4 @@ Within this app you can:
         -The Final Score tab will take the top 2 scores for each player, add them together and display the final score per player.
             -the button at the bottom outputs the final scores to an excel spreadsheet and clears all inputs. Resetting everything but the players so the app can be used again next week
             
-            -the Clear All button at the bottom will reset the entire app as well as the players
+            -the Clear All button at the bottom will reset the entire app as well as the list of players
