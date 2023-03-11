@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+}
+
+.checkin-switch {
+    padding: 1.0rem ;
+}
+
+th {
+    width: 20rem;
+}
+
+.names-table {
+    display: flex;
+}

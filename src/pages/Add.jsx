@@ -1,9 +1,11 @@
+//displays the add players component??
 
+import AddPlayers from "../components/AddPlayers"
 
 export default function Add() {  
     return (
         <>
-        <h1>Add players form</h1>
+            <AddPlayers />
         </>
     )
 }
