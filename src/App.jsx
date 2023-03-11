@@ -1,7 +1,9 @@
 import CheckIn from "./pages/CheckIn"
 import Home from "./pages/Home"
 import Match from "./pages/Match"
+import Add from "./pages/Add"
 import { Routes, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function App() {
  
@@ -15,6 +17,7 @@ export default function App() {
                 <Route path = "/" element={ <Home /> } />
                 <Route path = "checkin" element={ <CheckIn /> } />
                 <Route path = "match" element={ <Match /> } />
+                <Route path = "add" element={ <Add /> } />
             </Routes>
         </div>
 
