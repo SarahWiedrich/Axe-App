@@ -5,37 +5,57 @@
 //button done adds (below) and sends you to the check in page  
 
 import { Link } from "react-router-dom"
-import Button from "react-bootstrap/Button"
-import Form from "react-bootstrap/Form"
 import { useState } from "react"
+import useLocalStorage from "../hooks/useLocalStorage"
+//styling
+import Button from "react-bootstrap/Button"
+import { UserPlusIcon } from '@heroicons/react/24/solid'
+
 
 export default function AddPlayers() {
- 
-    const [player, setPlayer] = useState([])
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
+    const [name, setName] = useState("")
+    const [players, setPlayers] = useLocalStorage('players-list', [])
+    
+    //add player to local storage array
+    function addName(player) {
+        setPlayers(prevState => [...prevState, player])
+    }
 
-    return (
+    function handelFormSubmit(e) {
+        e.preventDefault()
+        addName({
+            name: name,
+            checked: false,
+            id: Date.now()//using date/time as a unique id assigned to each player
+        })
+        setName("")
+    }
+
+     return (
         <>
             <h1>Add New Players</h1>
-            
-            <Form.Control 
-                type="text" 
-                placeholder="First Name" 
-                onChange={(e) => setFirstName(e.target.value)}
-                value={firstName}/>
-            <br />
-            <Form.Control 
-                type="text" 
-                placeholder="Last Name"
-                onChange={(e) => setLastName(e.target.value)}
-                value={lastName}/>
-            <br />
+            <form className="playersForm" onSubmit={handelFormSubmit}>
+                <div>
+                    <input 
+                    type="text"
+                    id="name"
+                    className="input"
+                    value={name}
+                    onInput={(e) => setName(e.target.value)}
+                    required
+                    autoFocus
+                    placeholder="Enter Name"
+                    />
+                </div>
+                <button className="btn" type="submit"> 
+                    Add<UserPlusIcon />
+                </button>
+                <Link to={`/checkin`}>
+                    <Button variant="outline-secondary">Done</Button>
+                </Link>
+            </form>
+        
 
-            <Link to={`/checkin`}>
-                <Button variant="outline-secondary">Done</Button>
-            </Link>
-                <Button variant="outline-secondary">Add another</Button>
         </>
     )
 }

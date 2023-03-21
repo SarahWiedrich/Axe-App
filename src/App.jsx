@@ -3,6 +3,8 @@ import Home from "./pages/Home"
 import Match from "./pages/Match"
 import Add from "./pages/Add"
 import { Routes, Route } from 'react-router-dom'
+
+//styling
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function App() {

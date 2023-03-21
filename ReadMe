@@ -1,4 +1,4 @@
-Axe App utilizes Vite + React, as well as Bootstrap for CSS.
+Axe App utilizes Vite + React, as well as Bootstrap, and tailwinds HeroIcons for CSS.
 Axe app was created to keep track of players scores during an Axe tournament. 
 
 Within this app you can:
