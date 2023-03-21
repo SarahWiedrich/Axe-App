@@ -5,40 +5,28 @@
 // button to generate matchups - sends to match page 
 
 import Form  from "react-bootstrap/Form"
-import Table from "react-bootstrap/Table"
+import ListGroup from 'react-bootstrap/ListGroup'
 
 export default function Attendance() {
+
+    const displayPlayer = playersList.map((eachPlayer) => {
+        return <ListGroup.Item>{eachPlayer}</ListGroup.Item>
+    })
+    const markAbsent = playersList.forEach((player) => {
+        return <Form.Check type="switch" id="custom-switch" label="absent"/>
+    })
+
     return (
         <>
         <div className="container">
-            <div className="names-table">
-                <Table striped bordered hover size="sm">
-                    <thead>
-                        <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>   
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td>name</td>
-                        <td>name</td>
-                        </tr>
-                        <tr>
-                        <td>name</td>
-                        <td>name</td>
-                        </tr>
-                    </tbody>
-                </Table>
-            </div>
+            <h2>Players</h2>
+            <ListGroup>
+                {displayPlayer}
+            </ListGroup>
             <div className="checkin-switch">
                 <span>Click to mark absent</span>
                 <Form>
-                    <Form.Check 
-                        type="switch"
-                        id="custom-switch"
-                        label="absent"
-                    />
+                   {markAbsent}
                 </Form>
             </div>
         </div>
