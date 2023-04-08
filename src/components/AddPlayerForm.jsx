@@ -1,26 +1,25 @@
-//boxs to enter players first and last name
-//add button saves info to checkin table
-// everytime a player is added it will need to update add another line to the table on check in player.
-//button add another stays on this page and runs a function that adds first & last name to the players array
-//button done adds (below) and sends you to the check in page  
+//where player state is created/lives
+
+//Displays box to enter players name
+//add button saves name to local storage
+//done button sends you to the check in page  
 
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import useLocalStorage from "../hooks/useLocalStorage"
+
 //styling
 import Button from "react-bootstrap/Button"
 import { UserPlusIcon } from '@heroicons/react/24/solid'
 
 
-export default function AddPlayers() {
+export default function AddPlayerForm({ addName }) {
     const [name, setName] = useState("")
-    const [players, setPlayers] = useLocalStorage('players-list', [])
-    
-    //add player to local storage array
-    function addName(player) {
-        setPlayers(prevState => [...prevState, player])
-    }
+    // const [player, setPlayer] = useState([])
 
+    // function addName(player) {
+    //     setPlayer(prevState => [...prevState, player])
+    // }
+  
     function handelFormSubmit(e) {
         e.preventDefault()
         addName({
@@ -47,15 +46,13 @@ export default function AddPlayers() {
                     placeholder="Enter Name"
                     />
                 </div>
-                <button className="btn" type="submit"> 
+                <button className="btn" type="submit" aria-label="Add Name"> 
                     Add<UserPlusIcon />
                 </button>
                 <Link to={`/checkin`}>
                     <Button variant="outline-secondary">Done</Button>
                 </Link>
             </form>
-        
-
         </>
     )
 }
